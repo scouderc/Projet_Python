@@ -123,12 +123,33 @@ table_finale = agribalyse_selection.merge(
     ciqual_selection,
     left_on="code_ciqual",
     right_on="alim_code",
-    how="left"
+    how="left",
+    indicator=True
 )
 
-# alim_code est redondant avec code_ciqual
-table_finale = table_finale.drop(columns="alim_code")
+# Suppression des produits sans correspondance dans Ciqual
+nb_avant_suppression = len(table_finale)
 
+table_finale = table_finale[
+    table_finale["_merge"] == "both"
+].copy()
+
+nb_supprimes = nb_avant_suppression - len(table_finale)
+
+table_finale = table_finale.drop(columns=["_merge", "alim_code"])
+
+print("\nProduits supprimés car sans correspondance Ciqual :",
+      nb_supprimes)
+print("Nombre de produits après suppression :",
+      len(table_finale))
+
+# Remplacement des NaN restants par 0
+nb_nan_avant = table_finale.isna().sum().sum()
+
+table_finale = table_finale.fillna(0)
+
+print("\nNombre de valeurs NaN remplacées par 0 :",
+      nb_nan_avant)
 
 # ============================================================
 # 6. VERIFICATIONS APRES FUSION
@@ -136,11 +157,12 @@ table_finale = table_finale.drop(columns="alim_code")
 
 print("\nDimensions de la base finale :", table_finale.shape)
 
-# La fusion ne doit pas créer de lignes supplémentaires
-assert len(table_finale) == len(agribalyse_selection)
 
 # Vérification des doublons sur le code AGB
 assert table_finale["code_agb"].is_unique
+assert table_finale.isna().sum().sum() == 0
+print("Nombre total de valeurs NaN restantes :",
+      table_finale.isna().sum().sum())
 
 # Nombre de produits ayant récupéré des informations Ciqual
 nb_match_final = table_finale[
