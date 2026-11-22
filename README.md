@@ -7,7 +7,6 @@ Dès lors, appréhender séparément les dimensions environnementale et nutritio
 
 
 # 2. Présentation des bases de données
-- (À rédiger : présentation rapide d’Agribalyse et de Ciqual, leur rôle respectif et les informations qu’elles contiennent.)
 - Base de données Agribalyse :
   - Agribalyse est la base de données publique française de référence sur les impacts environnementaux des produits agricoles et alimentaires, évalués selon la méthode de l'Analyse du Cycle de Vie (ACV). Elle fournit des indicateurs concernant les principales productions agricoles françaises ainsi que les principaux produits alimentaires consommés en France. Elle a été développée dans le cadre d'un partenariat entre l'ADEME, l'INRAE, les instituts techniques agricoles et agroalimentaires, des experts indépendants et des cabinets d'études. 
   - Les données sont disponibles sous deux formats : un format complet et un format simplifié sous forme de tableurs. Pour ce projet, nous utilisons le tableur consacré aux produits alimentaires.
