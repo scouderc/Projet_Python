@@ -18,7 +18,7 @@
 
 # 3. Démarche à suivre pour utiliser le projet
 - Installer les logiciels et bibliothèques nécessaires
-  - Ouvrir un terminal dans le dossier du projet Python.
+  - Ouvrir un terminal dans le dossier du projet Python (à l’aide de la commande `cd Projet_Python` si nécessaire)
   - Installer les bibliothèques nécessaires à l’aide du fichier requirements.txt avec la commande "pip install -r requirements.txt"
 - Importer les bases de données
   - Ouvrir et exécuter le programme Import_database.py.
