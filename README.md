@@ -7,6 +7,7 @@ Dès lors, appréhender séparément les dimensions environnementale et nutritio
 
 
 # 2. Présentation des bases de données
+Le travail repose sur 2 bases de données distinctes :
 - Base de données Agribalyse :
   - Agribalyse est la base de données publique française de référence sur les impacts environnementaux des produits agricoles et alimentaires, évalués selon la méthode de l'Analyse du Cycle de Vie (ACV). Elle fournit des indicateurs concernant les principales productions agricoles françaises ainsi que les principaux produits alimentaires consommés en France. Elle a été développée dans le cadre d'un partenariat entre l'ADEME, l'INRAE, les instituts techniques agricoles et agroalimentaires, des experts indépendants et des cabinets d'études. 
   - Les données sont disponibles sous deux formats : un format complet et un format simplifié sous forme de tableurs. Pour ce projet, nous utilisons le tableur consacré aux produits alimentaires.
@@ -21,19 +22,22 @@ Dès lors, appréhender séparément les dimensions environnementale et nutritio
 - Les bases Agribalyse et Ciqual sont complémentaires : la première fournit des informations sur les impacts environnementaux des aliments, tandis que la seconde renseigne sur leur composition nutritionnelle. Les produits alimentaires référencés dans Agribalyse correspondent aux aliments présents dans la table Ciqual. Les deux bases peuvent être rapprochées grâce à un identifiant commun : le code CIQUAL. Cette correspondance permet d’étudier, pour un même aliment, sa composition nutritionnelle et son empreinte environnementale, et ainsi de réaliser des analyses croisées entre ces deux dimensions.
 
 # 3. Démarche à suivre pour utiliser le projet
+Pour assurer la reproductibilité de notre démarche, nous avons développé plusieurs programmes et notebooks permettant de télécharger, nettoyer, transformer et fusionner les données. Les étapes à suivre pour reproduire ce processus et consulter les analyses sont détaillées ci-dessous.
+### Etape à suivre
 - Installer les logiciels et bibliothèques nécessaires
   - Ouvrir un terminal dans le dossier du projet Python (à l’aide de la commande `cd Projet_Python` si nécessaire)
   - Installer les bibliothèques nécessaires à l’aide du fichier requirements.txt avec la commande "pip install -r requirements.txt"
 - Importer les bases de données
   - Ouvrir et exécuter le programme Import_database.py.
   - Ce programme permet de récupérer automatiquement les trois tables nécessaires depuis les sites de l’ADEME (Agribalyse) et de l’ANSES (Ciqual).
-  - Cas particulier : la base Ciqual pouvant être temporairement inaccessible en raison d’une maintenance du site, l’exécution du programme peut générer un message d’erreur lors du téléchargement de cette base. Dans ce cas, placer dans le dossier data/ le fichier Ciqual fourni avec le projet sur GitHub, puis poursuivre les étapes suivantes.
+  - Cas particulier : la base Ciqual pouvant être temporairement inaccessible en raison d’une maintenance du site, l’exécution du programme peut générer un message d’erreur lors du téléchargement de cette base. Cette base de données est mise à disposition dans le dossier data pour la reproductibilité de la suite du programme. 
 - Préparer et explorer les bases de données
   - Ouvrir et exécuter Exploration_nettoyage_Agribalyse.ipynb.
   - Ouvrir et exécuter Exploration_nettoyage_Ciqual.ipynb.
   - Lire les explications fournies dans les notebooks afin de comprendre les différentes étapes de nettoyage, de transformation et de création des nouvelles variables.
 - Créer la base de données finale
   - Exécuter le programme Fusion_BD.py.
+  Remarque : Afin de garantir la disponibilité de la base de données et de permettre l'exécution du notebook d'analyse, une version de database.csv est également fournie dans le dossier data/ sur GitHub. Il reste néanmoins possible de reconstruire cette base à partir des données sources en exécutant le programme Fusion_BD.py.
   - Ce programme fusionne les données Agribalyse et Ciqual afin de créer la base de données finale database.csv.
 - Réaliser et consulter les analyses
   - Ouvrir le notebook Analyse.ipynb.
