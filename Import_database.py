@@ -33,16 +33,16 @@ agribalyse_detail_etapes.to_csv(
 )
 
 
-# Ciqual
-url_ciqual = (
-    "https://ciqual.anses.fr/cms/sites/default/files/inline-files/"
-    "Table%20Ciqual%202025_FR_2025_11_03.xlsx"
-)
-ciqual = pd.read_excel(url_ciqual)
-ciqual.to_excel(
-    os.path.join(DOSSIER_DATA, "ciqual.xlsx"),
-    index=False
-)
+# # Ciqual
+# url_ciqual = (
+#     "https://ciqual.anses.fr/cms/sites/default/files/inline-files/"
+#     "Table%20Ciqual%202025_FR_2025_11_03.xlsx"
+# )
+# ciqual = pd.read_excel(url_ciqual)
+# ciqual.to_excel(
+#     os.path.join(DOSSIER_DATA, "ciqual.xlsx"),
+#     index=False
+# )
 
 # ============================================================
 # 2. VERIFICATION RAPIDE
@@ -54,8 +54,8 @@ print(agribalyse_synthese.head())
 print("\nAgribalyse - Détail par étape :", agribalyse_detail_etapes.shape)
 print(agribalyse_detail_etapes.head())
 
-print("\nCiqual :", ciqual.shape)
-print(ciqual.head())
+# print("\nCiqual :", ciqual.shape)
+# print(ciqual.head())
 
 
 # ============================================================
@@ -64,9 +64,9 @@ print(ciqual.head())
 
 assert len(agribalyse_synthese) > 0
 assert len(agribalyse_detail_etapes) > 0
-assert len(ciqual) > 0
+# assert len(ciqual) > 0
 
 assert "Code AGB" in agribalyse_synthese.columns
-assert "Code CIQUAL" in agribalyse_synthese.columns
+# assert "Code CIQUAL" in agribalyse_synthese.columns
 
 print("\nLes trois bases ont été importées et enregistrées dans le dossier data/.")

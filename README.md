@@ -30,13 +30,13 @@ Pour assurer la reproductibilité de notre démarche, nous avons développé plu
 - Importer les bases de données
   - Ouvrir et exécuter le programme Import_database.py.
   - Ce programme permet de récupérer automatiquement les trois tables nécessaires depuis les sites de l’ADEME (Agribalyse) et de l’ANSES (Ciqual).
-  - Cas particulier : la base Ciqual pouvant être temporairement inaccessible en raison d’une maintenance du site, l’exécution du programme peut générer un message d’erreur lors du téléchargement de cette base. Cette base de données est mise à disposition dans le dossier data pour la reproductibilité de la suite du programme. 
+  - Cas particulier : La base de données Ciqual initialement prévue étant temporairement inaccessible en raison d’une maintenance du site, l’exécution de cette partie du programme n’a pas pu être réalisée dans les conditions initialement prévues. Le code correspondant à cette fonctionnalité a donc été conservé, mais mis en commentaire à l’aide du symbole #. Afin de permettre la bonne exécution du programme, une base de données alternative, mise à disposition dans le dossier data, a été utilisée pour les tests.
 - Préparer et explorer les bases de données
   - Ouvrir et exécuter Exploration_nettoyage_Agribalyse.ipynb.
   - Ouvrir et exécuter Exploration_nettoyage_Ciqual.ipynb.
   - Lire les explications fournies dans les notebooks afin de comprendre les différentes étapes de nettoyage, de transformation et de création des nouvelles variables.
 - Créer la base de données finale
-  - Exécuter le programme Fusion_BD.py.
+  - Exécuter le programme Jointure_BD.py.
   Remarque : Afin de garantir la disponibilité de la base de données et de permettre l'exécution du notebook d'analyse, une version de database.csv est également fournie dans le dossier data/ sur GitHub. Il reste néanmoins possible de reconstruire cette base à partir des données sources en exécutant le programme Fusion_BD.py.
   - Ce programme fusionne les données Agribalyse et Ciqual afin de créer la base de données finale database.csv.
 - Réaliser et consulter les analyses
