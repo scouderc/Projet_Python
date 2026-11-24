@@ -36,8 +36,8 @@ Pour assurer la reproductibilité de notre démarche, nous avons développé plu
   - Ouvrir et exécuter Exploration_nettoyage_Ciqual.ipynb.
   - Lire les explications fournies dans les notebooks afin de comprendre les différentes étapes de nettoyage, de transformation et de création des nouvelles variables.
 - Créer la base de données finale
-  - Exécuter le programme Jointure_BD.py.
-  Afin de garantir la disponibilité des données et de permettre l’exécution du notebook d’analyse, une copie de secours de la base de données est également fournie dans le dossier data du dépôt GitHub, sous le nom database_de_secours.csv. En cas d’indisponibilité de la base de données initiale, il est possible d’utiliser cette copie en la renommant database.csv, afin de conserver la compatibilité avec les fonctions du programme. L’exécution normale du notebook repose néanmoins sur la base de données initiale et sur les fonctions développées à cet effet. Cette copie constitue uniquement une solution alternative en cas de problème d’accès.
+  - Exécuter le programme Jointure_BD.py.  
+Afin de garantir la disponibilité des données et de permettre l’exécution du notebook d’analyse, une copie de secours de la base de données est également fournie dans le dossier data du dépôt GitHub, sous le nom database_de_secours.csv. En cas d’indisponibilité de la base de données initiale, il est possible d’utiliser cette copie en la renommant database.csv, afin de conserver la compatibilité avec les fonctions du programme. L’exécution normale du notebook repose néanmoins sur la base de données initiale et sur les fonctions développées à cet effet. Cette copie constitue uniquement une solution alternative en cas de problème d’accès.
   - Ce programme fusionne les données Agribalyse et Ciqual afin de créer la base de données finale database.csv.
 - Réaliser et consulter les analyses
   - Ouvrir le notebook Analyse.ipynb.
